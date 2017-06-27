@@ -2,9 +2,13 @@ package com.xxh.viewgroupadapter.demo;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.xxh.viewgroupadapter.R;
@@ -88,5 +92,44 @@ public class MainActivity extends AppCompatActivity {
         testBean = new TestBean(R.mipmap.image3, "美女3");
         mDatas.add(testBean);
         mBaseAdapter.notifyDatasetChanged();
+    }
+
+
+    public void bindViews(){
+        LayoutInflater layoutInflater = LayoutInflater.from(this);
+        for(int i = 0; i < mDatas.size(); i++) {
+            TestBean item = mDatas.get(i);
+            //初始化视图
+            View view = layoutInflater.inflate(R.layout.item_horizontal,ll_horizontal,false);
+            //初始化操作控件
+            ImageView iv_icon = (ImageView) view.findViewById(R.id.iv_icon);
+            TextView tv_title = (TextView) view.findViewById(R.id.tv_title);
+            Button  btn_test = (Button) view.findViewById(R.id.btn_test);
+            //绑定数据
+            iv_icon.setImageResource(item.getImageId());
+            tv_title.setText(item.getName());
+            //点击事件
+            btn_test.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                }
+            });
+            //item 的点击事件
+            view.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                }
+            });
+            //item 的长按事件
+            view.setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View v) {
+                    return false;
+                }
+            });
+
+        }
     }
 }

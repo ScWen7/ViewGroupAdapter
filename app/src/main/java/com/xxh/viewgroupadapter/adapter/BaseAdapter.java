@@ -9,14 +9,7 @@ import android.view.ViewGroup;
 import java.util.List;
 
 /**
- * 介绍：datas->View 的 Base Adapter
- * 整个设计的第二层，这里引入datas，实现IViewGroupAdapter的方法
- * <p>
- * V1.7.0 版本加入，刷新方法 notifyDatasetChanged()
- * 作者：zhangxutong
- * 邮箱：mcxtzhang@163.com
- * 主页：http://blog.csdn.net/zxt0601
- * 时间： 16/12/08.
+
  */
 
 public abstract class BaseAdapter<T> implements IViewGroupAdapter {
