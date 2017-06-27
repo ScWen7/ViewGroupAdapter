@@ -1,4 +1,4 @@
-package com.xxh.viewgroupadapter;
+package com.xxh.viewgroupadapter.adapter;
 
 import android.database.DataSetObserver;
 import android.view.View;

@@ -1,4 +1,4 @@
-package com.xxh.viewgroupadapter;
+package com.xxh.viewgroupadapter.adapter;
 
 import android.annotation.SuppressLint;
 import android.content.Context;

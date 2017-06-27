@@ -1,4 +1,4 @@
-package com.xxh.viewgroupadapter;
+package com.xxh.viewgroupadapter.adapter;
 
 import android.view.View;
 import android.view.ViewGroup;
