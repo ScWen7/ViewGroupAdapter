@@ -1,7 +1,7 @@
 package com.xxh.viewgroupadapter.demo;
 
 /**
- * Created by 解晓辉 on 2017/6/27.
+ *
  * 作用：
  */
 

@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
 
         mBaseAdapter = new BaseAdapter<TestBean>(this, mDatas, R.layout.item_horizontal) {
             @Override
-            protected void onBindViewHolder(ViewGroup parent, ViewHolder holder, TestBean item, final int pos) {
+            protected void convert(ViewGroup parent, ViewHolder holder, TestBean item, final int pos) {
                 holder.setImageResource(R.id.iv_icon, item.getImageId())
                         .setText(R.id.tv_title, item.getName())
                         .setOnClickListener(R.id.btn_test, new View.OnClickListener() {

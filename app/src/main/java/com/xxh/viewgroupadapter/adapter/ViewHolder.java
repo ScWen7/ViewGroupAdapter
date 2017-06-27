@@ -21,12 +21,6 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 
 /**
- * 介绍：V1.5.0 引入 ViewCache概念
- * 配合ViewCache 存储 ItemViewType 信息
- * 作者：zhangxutong
- * 邮箱：mcxtzhang@163.com
- * 主页：http://blog.csdn.net/zxt0601
- * 时间： 2016/12/29.
  */
 
 public class ViewHolder {

@@ -74,12 +74,12 @@ public abstract class BaseAdapter<T> implements IViewGroupAdapter {
     public View getView(ViewGroup parent, int pos) {
         //实现getView
         ViewHolder holder = onCreateViewHolder(parent, pos);
-        onBindViewHolder(parent, holder, mDatas.get(pos), pos);
+        convert(parent, holder, mDatas.get(pos), pos);
         return holder.itemView;
 
     }
 
-    protected abstract void onBindViewHolder(ViewGroup parent, ViewHolder holder, T item, int pos);
+    protected abstract void convert(ViewGroup parent, ViewHolder holder, T item, int pos);
 
     private ViewHolder onCreateViewHolder(ViewGroup parent, int pos) {
         return ViewHolder.carateViewHolder(mContext, parent, mItemViewId, pos);
@@ -99,8 +99,9 @@ public abstract class BaseAdapter<T> implements IViewGroupAdapter {
         return mDatas;
     }
 
-    public BaseAdapter setDatas(List<T> datas) {
+    public BaseAdapter setDatas(List<T> datas){
         mDatas = datas;
+        notifyDatasetChanged();
         return this;
     }
 
@@ -118,17 +119,14 @@ public abstract class BaseAdapter<T> implements IViewGroupAdapter {
             return this;
         }
         mParent.removeAllViews();
-        //Step 2, begin add views
         int count = getCount();
         for (int i = 0; i < count; i++) {
-            //Get itemView by adapter
+
             final View itemView = getView(mParent, i);
             mParent.addView(itemView);
             itemView.setTag(i);
 
-            //Step 3 (Optional),
-            //If item has not set click listener before, add click listener for each item.
-            //If in refresh , reset click listener
+
             if (null != mOnItemClickListener) {
                 itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
